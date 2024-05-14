@@ -38,7 +38,7 @@ const Home = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await api.get('recipes/')
+        const response = await api.get('/recipes')
         const sortedRecipes = response.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 10)
         setRecipes(sortedRecipes)
       } catch (error) {
@@ -86,10 +86,10 @@ const Home = () => {
       <h2>Recetas más recientes:</h2>
       <ul>
         {recipes.map(recipe => (
-          <div>
+          <div key={recipe._id}>
             <h3><Link to={`/recipe/${recipe._id}`}>{recipe.title}</Link></h3>
             <p>{recipe.description}</p>
-          </ div>
+          </div>
         ))}
       </ul>
 

@@ -1,14 +1,15 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import Profile from './pages/Profile'
-import CreateRecipe from './pages/CreateRecipe'
-import EditRecipe from './pages/EditRecipe'
-import RecipeDetails from './pages/RecipeDetails'
-import UserRecipes from './pages/UserRecipes'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import './styles/App.css';
+import './styles/Index.css';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
+import CreateRecipe from './pages/CreateRecipe';
+import EditRecipe from './pages/EditRecipe';
+import RecipeDetails from './pages/RecipeDetails';
+import UserRecipes from './pages/UserRecipes';
 
 const App = () => {
     return (
@@ -22,7 +23,7 @@ const App = () => {
           <Route path="/recipe/:id" element={<RecipeDetails />} />
           <Route path="/user-recipes/:id" element={<UserRecipes />} />
       </Routes>
-    )
-}
+    );
+};
 
-export default App
+export default App;
